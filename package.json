@@ -1,0 +1,26 @@
+{
+  "name": "team-generator",
+  "version": "1.0.0",
+  "description": "Creating a team using node",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mvint2647/Team-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mvint2647/Team-Generator/issues"
+  },
+  "homepage": "https://github.com/Mvint2647/Team-Generator#readme",
+  "dependencies": {
+    "inquire": "^0.4.8",
+    "inquirer": "^8.1.3"
+  }
+}
