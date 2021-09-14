@@ -1,9 +1,6 @@
-const { hasUncaughtExceptionCaptureCallback } = require('process');
-const { TestScheduler } = require('rxjs/testing');
+const Employee = require("../lib/Employee");
 
-const Employee = require('../lib/Employee');
-
-test("can you make a new Employeee",() => {
+test("can you make a new Employee",() => {
     const e = new Employee ();
     expect(typeof(e)).toBe("object");
 
