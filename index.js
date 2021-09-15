@@ -1,15 +1,4 @@
-const Employee = require("./Lib/Employee");
-const Employee = Manager("./Lib/Manager");
-const Employee = Intern("./Lib/Intern");
-const Employee = Engineer("./Lib/Engineer");
-const fs = require("fs");
-const inquire = require("inquirer");
 
-const teamMembers = [];
- managerPrompt();
-// TODO: Create an array of questions for user input
-function managerPrompts() {
-    inquirer.prompt([
         {
             type: "input",
             name: "managerName",
@@ -108,12 +97,7 @@ function internPrompts (){
             name: "school",
             message: "What is the interns school?"
         }
-    ]).then(function(response) {
-        const intern = new Intern(response.internName, response.internId, response.internEmail, response.school);
-        teamMembers.push(intern);
-        newMember();
-    });
-}
+
 
 then(answers => {
     const Intern = Intern(answers.internName, answers.internName);
@@ -132,6 +116,6 @@ then(answers => {
 
 createManager();
 
-
+}
 
 appMenu();
