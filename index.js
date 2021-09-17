@@ -118,8 +118,9 @@ function internPrompts (){
 
     ])
 .then(answers => {
-    const intern = Intern(answers.internName, answers.internName);
+    const intern = new Intern(answers.internName, answers.internName);
     teamMembers.push(intern);
+    newMember();
     idArray.push(answers.internId);
     createReadStream();
      })
