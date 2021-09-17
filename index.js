@@ -1,8 +1,24 @@
+const inquirer = require("inquirer")
+const fs = require("fs")
+const path = require("path")
+const Manager = require("./Lib/Manager");
+const Engineer = require("./Lib/Engineer");
+const Intern = require("./Lib/Intern");
+const teamMembers = [ ]
+const emmit_Dir = path.resolve(__dirname, "output")
+const emmitPath = path.join(emmit_Dir, "team.html");
+const render = require("./src/page-template");
 
+
+// TODO: Create an array of questions for user input
+newMember()
+
+function managerPrompts() {
+    inquirer.prompt([
         {
             type: "input",
             name: "managerName",
-            message: "What is the team managers name?"
+            message: "What is the managers name?"
         },
         {
             type: "input",
@@ -12,16 +28,16 @@
         {
             type: "input",
             name: "managerEmail",
-            message: "What is the managers email?"
+            message: "What is the managers email address?"
         },
         {
             type: "input",
-            name: "managerOffice",
-            message: "What is the managers office room number?"
+            name: "gitHub",
+            message: "What is the managers GitHub username?"
         }
     ]).then(function(response) {
-        const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOffice)
-        teamMembers.push(manager)
+        const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.gitHub);
+        teamMembers.push(manager);
         newMember();
     });
 }
@@ -32,16 +48,18 @@ function newMember() {
             type: "list",
             name: "position",
             message: "What position would you like to add to team?",
-            choices: ["Intern", "Engineer", "Hiring Completed"]
+            choices: ["Manager", "Intern", "Engineer", "Hiring Completed"]
         }
     ]).then(function(response){
         if(response.position === "Intern"){
             internPrompts();
         } else if(response.position === "Engineer") {
             engineerPrompts();
-        } else {
-            generateMarkdown();
+        } else if(response.position === "Manager") {
+            managerPrompts();
             
+        }else{
+            BuildingTeam()
         }
     });
 }
@@ -98,24 +116,19 @@ function internPrompts (){
             message: "What is the interns school?"
         }
 
-
-then(answers => {
-    const Intern = Intern(answers.internName, answers.internName);
+    ])
+.then(answers => {
+    const intern = Intern(answers.internName, answers.internName);
     teamMembers.push(intern);
     idArray.push(answers.internId);
     createReadStream();
-     });
+     })
     
-    
+    }
      function BuildingTeam() {
-    if(!fs.existsSync(OUTPUT_DIR)) {
-        fs.mkdir(OUTPUT_DIR)
+    if(!fs.existsSync(emmit_Dir)) {
+        fs.mkdir(emmit_Dir)
      }
-     fs.writeFileSync(OutputPath, render(temaMembers), "utf-8");
+     fs.writeFileSync(emmitPath, render(teamMembers), "utf-8");
     }
 
-createManager();
-
-}
-
-appMenu();
