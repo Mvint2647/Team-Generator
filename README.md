@@ -30,3 +30,5 @@ Trial and error
 
 ## Badges
 (JavaScript, Node.js)
+
+Walk Through Video : https://drive.google.com/file/d/1h3IbVZYLik_sfVbKb_zenR9QzLlVo4S9/preview
