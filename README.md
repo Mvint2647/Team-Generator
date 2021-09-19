@@ -20,7 +20,7 @@ Trial and error
 ## Screenshots
 ![team-generator](ss040.png)
 
-## VIDEO
+## VIDEO Walk-Through
 https://drive.google.com/file/d/1h3IbVZYLik_sfVbKb_zenR9QzLlVo4S9/view
 =======
 
