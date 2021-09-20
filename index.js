@@ -128,7 +128,7 @@ function internPrompts (){
     }
      function BuildingTeam() {
     if(!fs.existsSync(emmit_Dir)) {
-        fs.mkdir(emmit_Dir)
+        fs.mkdirSync(emmit_Dir)
      }
      fs.writeFileSync(emmitPath, render(teamMembers), "utf-8");
     }
