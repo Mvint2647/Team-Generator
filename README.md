@@ -20,8 +20,13 @@ Trial and error
 ## Screenshots
 ![team-generator](ss040.png)
 
-## VIDEO Walk-Through
-https://drive.google.com/file/d/1h3IbVZYLik_sfVbKb_zenR9QzLlVo4S9/view
+
+Walk Through Video :
+
+https://user-images.githubusercontent.com/85262817/133938733-2cf1b24d-cb1a-4b37-8e63-a46b8657bdf7.mp4
+
+
+
 =======
 
 ## License
