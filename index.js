@@ -141,5 +141,6 @@ function BuildingTeam() {
   if (!fs.existsSync(emmit_Dir)) {
     fs.mkdirSync(emmit_Dir);
   }
-  fs.w(emmitPath, render(teamMembers), "utf-8");
+  
+  fs.writeFileSync(emmitPath, render(teamMembers), "utf-8");
 }
